@@ -1,31 +1,17 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { FaBars, FaShoppingCart, FaTimes } from "react-icons/fa";
 import Button from "../../components/shared/Button";
-import Logo from "../../assets/images/asset 0.png";
-import { ImagesSlider } from "../ui/images-slider";
-import img1 from "../../assets/images/asset 70.png";
-import img2 from "../../assets/images/asset 71.png";
-import img3 from "../../assets/images/asset 72.png";
+import Logo from "../../assets/images/logo.png";
 import backgroundImage from "../../assets/images/asset 84.png";
-import Overlay from "../Overlay-bg/Overlay-bg";
 
 const Header = () => {
-  const images = [img1, img2, img3];
-
-  const text = [
-    "Juicy Burgers, Made to Perfection!",
-    "Grilled to Sizzle, Served with Love!",
-    "The Ultimate Burger Experience.",
-    "Fresh Ingredients, Bold Flavors.",
-    "Bite Into Happiness!",
-  ];
-
-  const buttonText = ["Order Now", "View Menu", "Contact Us"];
   // for menu btn
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // for sticky Navbar
   const [isSticky, SetisSticky] = useState(false);
 
+  // nav links
   const menuLinks = [
     { id: 1, name: "Home", link: "/home" },
     { id: 2, name: "Menu", link: "/menu" },
@@ -34,6 +20,7 @@ const Header = () => {
     { id: 5, name: "Our Chefs", link: "/ourchefs" },
   ];
 
+  // for menu toggle
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -53,6 +40,7 @@ const Header = () => {
     };
   }, []);
 
+  // css for sticky navbar
   const navbarStyle = isSticky
     ? {
         position: "fixed",
@@ -79,7 +67,7 @@ const Header = () => {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <div className="flex items-center">
-              <img src={Logo} alt="Logo" className="h-8 w-auto sm:h-10" />
+              <img src={Logo} alt="Logo" className="h-8 w-auto sm:h-16" />
             </div>
 
             {/* Mobile menu button */}
@@ -148,17 +136,6 @@ const Header = () => {
           )}
         </nav>
       </header>
-      <div className="relative">
-        <ImagesSlider
-          images={images}
-          autoplay={true}
-          direction="up"
-          className="h-[680px] w-full"
-          text={text}
-          buttonText={buttonText}
-        />
-        <Overlay height="70px" />
-      </div>
     </>
   );
 };
