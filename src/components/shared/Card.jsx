@@ -2,21 +2,25 @@
 /* eslint-disable react/prop-types */
 import React from "react";
 
-const Card = ({ imageUrl, title, description, price, isNew }) => {
+const Card = ({ title, description, price, imageUrl, isNew }) => {
   return (
-    <div className="max-w-xs rounded overflow-hidden shadow-lg bg-white border border-gray-200 hover:shadow-xl hover:border-secondary transition-shadow duration-300 mb-16">
-      <div className="relative">
+    <div className="w-[300px] rounded-xl overflow-hidden shadow-lg border border-gray-300 transition-all hover:border-red-500">
+      <div className="relative bg-[#F8F6F4] rounded-lg">
+        <img className="w-full" src={imageUrl} alt={title} />
         {isNew && (
-          <span className="absolute top-2 left-2 bg-yellow-400 text-xs font-semibold text-white px-2 py-1 rounded">
+          <span className="absolute top-2 left-2 bg-yellow-400 text-xs font-bold px-2 py-1 rounded">
             NEW
           </span>
         )}
-        <img className="w-full h-48 object-cover" src={imageUrl} alt={title} />
       </div>
-      <div className="p-4">
-        <h2 className="font-bold text-lg text-gray-800 mb-2">{title}</h2>
-        <p className="text-sm text-gray-600 mb-4">{description}</p>
-        <div className="text-red-500 font-semibold text-xl">${price}</div>
+      <div className="px-6 py-4">
+        <div className="font-bold text-xl text-black mb-2">{title}</div>
+        <p className="text-gray-700 text-sm">{description}</p>
+      </div>
+      <div className="px-6 pt-4 pb-2">
+        <span className="inline-block bg-red-500 rounded-full px-3 py-1 text-sm font-semibold text-white">
+          ${price.toFixed(2)}
+        </span>
       </div>
     </div>
   );

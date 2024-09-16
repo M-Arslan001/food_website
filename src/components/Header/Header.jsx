@@ -87,10 +87,11 @@ const Header = () => {
                 className={`flex space-x-6 items-center ${textColor} uppercase text-xs tracking-[1px]`}
               >
                 {menuLinks.map((item) => (
-                  <li key={item.id}>
+                  <li key={item.id} className="relative group">
                     <a href={item.link} className="hover:text-primary/95">
                       {item.name}
                     </a>
+                    <span className="absolute left-0 bottom-0 w-0 h-[2px] bg-white transition-all duration-300 group-hover:w-full"></span>
                   </li>
                 ))}
               </ul>
