@@ -20,7 +20,9 @@ import dessertsimg3 from "../assets/menu_titlesection/asset 24.png";
 import dessertsimg4 from "../assets/menu_titlesection/asset 25.png";
 import dessertsimg5 from "../assets/menu_titlesection/asset 26.png";
 import dessertsimg6 from "../assets/menu_titlesection/asset 22.png";
-
+import promocardImg1 from "../assets/promocardimg/asset 27.png";
+import promocardImg2 from "../assets/promocardimg/asset 28.png";
+import promocardImg3 from "../assets/promocardimg/asset 29.png";
 export const MenuContext = createContext();
 
 export const MenuProvider = ({ children }) => {
@@ -173,8 +175,43 @@ export const MenuProvider = ({ children }) => {
       },
     ],
   };
+  const PromocardData = [
+    {
+      data: 1,
+      image: promocardImg1,
+      offer: "50% Off",
+      title: "CHICHA MORADA",
+      description:
+        "Bacon, chorizo, roasted roma tomatoes, mushrooms & spinach. Beef, eggs, poached, fried.",
+      price: "$30",
+      actualPrice: "$40",
+    },
+    {
+      data: 2,
+      image: promocardImg2,
+      offer: "25% Off",
+      title: "CLASSIC BURGER",
+      description:
+        "Juicy beef patty with cheddar cheese, lettuce, tomato, pickles, and special sauce.",
+      price: "$15",
+      actualPrice: "$20",
+    },
+    {
+      data: 3,
+      image: promocardImg3,
+      offer: "10% Off",
+      title: "VEGAN BOWL",
+      description:
+        "Quinoa, avocado, kale, chickpeas, roasted sweet potatoes, and tahini dressing.",
+      price: "$18",
+      actualPrice: "$20",
+    },
+  ];
+
   return (
-    <MenuContext.Provider value={{ selectedMenu, setselectedMenu, MenuData }}>
+    <MenuContext.Provider
+      value={{ selectedMenu, setselectedMenu, MenuData, PromocardData }}
+    >
       {children}
     </MenuContext.Provider>
   );
