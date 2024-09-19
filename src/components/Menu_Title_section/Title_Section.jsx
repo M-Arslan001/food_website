@@ -66,7 +66,7 @@ const Title_Section = () => {
             <Card key={index} {...item} />
           ))}
       </div>
-      <div className="flex justify-center items-center mt-8 mb-8">
+      <div className="flex justify-center items-center mt-8">
         <Button
           text="View Full Menu"
           bgColor="bg-secondary"

@@ -16,6 +16,11 @@ export default {
       fontFamily: {
         custom: ["Rowdies", "sans-serif"],
       },
+      fontWeight: {
+        light: 300,
+        normal: 400,
+        bold: 700,
+      },
     },
   },
   plugins: [require("tailwindcss-filters")],
