@@ -10,7 +10,7 @@ const Overlay = ({ height = "auto" }) => {
         <img
           src={overlyimg}
           alt="overlay"
-          className="w-full h-full object-cover
+          className="w-full h-full object-cover 
           "
         />
       </div>
