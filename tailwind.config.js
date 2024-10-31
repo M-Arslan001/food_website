@@ -21,7 +21,25 @@ export default {
         normal: 400,
         bold: 700,
       },
+      textStroke: {
+        gray: "1px #b0b0b0",
+        red: "1px #ff4d4f",
+      },
     },
   },
-  plugins: [require("tailwindcss-filters")],
+  plugins: [
+    require("tailwindcss-filters"),
+    function ({ addUtilities }) {
+      addUtilities({
+        ".outline-gray": {
+          color: "transparent",
+          "-webkit-text-stroke": "1px #b0b0b0",
+        },
+        ".outline-red": {
+          color: "transparent",
+          "-webkit-text-stroke": "1px #ff4d4f",
+        },
+      });
+    },
+  ],
 };

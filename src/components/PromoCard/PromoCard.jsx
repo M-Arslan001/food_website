@@ -18,7 +18,7 @@ const PromoCard = ({
       className={`flex flex-col md:flex-row justify-center items-center mt-4 ${className}`}
     >
       {/* text */}
-      <div className="w-10/12 md:w-1/3 lg:w-1/4 ">
+      <div className="w-10/12 md:w-1/3 lg:w-1/3">
         <div
           className="order-1 rounded-lg"
           style={{
@@ -51,17 +51,20 @@ const PromoCard = ({
           </div>
         </div>
       </div>
-      {/* image */};
-      <div className="w-10/12 md:w-1/3 lg:w-1/4  order-2">
-        <div className="text-white  rounded-lg">
+      <div className="h-4 lg-h-0"></div>
+
+      {/* image */}
+      <div className="w-10/12 md:w-1/3 lg:w-1/3 order-2 ">
+        <div className="text-white rounded-lg h-full">
           <img
             src={image}
             alt={title}
-            className="rounded-xl w-full h-[287.557px]"
+            className="rounded-xl w-full h-full object-cover" // Use object-cover to maintain aspect ratio
           />
         </div>
       </div>
     </div>
   );
 };
+
 export default PromoCard;
