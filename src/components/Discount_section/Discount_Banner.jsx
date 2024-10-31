@@ -3,10 +3,12 @@ import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import parralexImg from "../../assets/burger-images/kfc-bg.png";
 import Img from "../../assets/images/asset 75.png";
-import PromoCard from "../../components/PromoCard/PromoCard";
-import { useData } from "../../context_api/MenuData";
+// import PromoCard from "../../components/PromoCard/PromoCard";
+// import { useData } from "../../context_api/MenuData";
 import Overlay from "../Overlay-bg/Overlay-bg";
-
+import OfferCard from "../shared/OfferCard";
+import OffercardImg from "../../assets/burger-images/offer-bg.png";
+import offerimg from "../../assets/burger-images/offer-shape.png";
 const BurgerSlider = () => {
   //   const { PromocardData } = useData();
   //   const [currentSlide, setCurrentSlide] = useState(0);
@@ -42,7 +44,7 @@ const BurgerSlider = () => {
 
   return (
     <>
-      <div className="mt-28 bg-[#f7f4ed] overflow-hidden">
+      <div className="mt-20 bg-[#f7f4ed] overflow-hidden">
         <motion.div
           className=""
           animate={{ x: [0, -1000] }}
@@ -60,7 +62,7 @@ const BurgerSlider = () => {
             {items.concat(items).map((item, index) => (
               <div key={index} className="flex items-center space-x-2 mx-4">
                 <span
-                  className={` text-xl md:text-5xl font-bold tracking-wide ${getColorClass(
+                  className={` text-xl md:text-4xl lg:text-5xl font-bold font-custom tracking-wide ${getColorClass(
                     index
                   )}`}
                 >
@@ -89,6 +91,14 @@ const BurgerSlider = () => {
             our discounted dishes
           </h1>
           <img src={Img} alt="Promo Image" />
+        </div>
+        <div className="flex justify-center items-center">
+          <OfferCard
+            title={"crispy, every bite taste"}
+            subtitle={"SUPER DELICIOUS"}
+            bgImage={OffercardImg}
+            offerImg={offerimg}
+          />
         </div>
       </div>
 
